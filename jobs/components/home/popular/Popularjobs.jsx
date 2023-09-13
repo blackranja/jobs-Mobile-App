@@ -16,10 +16,11 @@ import {
 import PopularJobCard from '../../common/cards/popular/PopularJobCard';
 
 const Popularjobs = () => {
+  const [error,setError]=useState(false);
   const router=useRouter();
   const isLoading=false;
   return (
-    <view style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>
           Popular Jobs
@@ -35,7 +36,8 @@ const Popularjobs = () => {
           <ActivityIndicator 
           size="large"
           colors={COLORS.primary}/>
-        ):error?(
+        ):
+         error?(
           <Text>Something Went Wrong</Text>
         ):(
           <FlatList data={[1,2,3,4]}
@@ -52,7 +54,7 @@ const Popularjobs = () => {
       }
         
       </View>
-    </view>
+    </View>
   )
 }
 

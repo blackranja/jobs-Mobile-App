@@ -1,11 +1,23 @@
 import {useState} from 'react';
-import {View,Text,TextInput,TouchableOpacity,Image,FlatList} from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Image,
+  FlatList
+} from 'react-native';
 import {useRouter} from 'expo-router';
 import styles from './welcome.style';
-import {icons,SIZES} from '../../../constants';
+import {
+  icons,
+  SIZES
+} from '../../../constants';
+const jobTypes=["Full-time","Part_time","contract"];
 
 const Welcome = () => {
   const router=useRouter();
+  const [activeJobType,setActiveJobType]=useState("Full-time");
   return (
     <View>
       <View
@@ -35,7 +47,7 @@ const Welcome = () => {
           />
         </TouchableOpacity>
       </View>
-      <view 
+      <View 
       style={styles.tabsContainer}
       >
         <FlatList 
@@ -49,7 +61,7 @@ const Welcome = () => {
           }
           }
           >
-            <Text style={styles.tabText(activeJobTypes,item)}>
+            <Text style={styles.tabText(activeJobType,item)}>
               {item}
             </Text>
 
@@ -60,7 +72,7 @@ const Welcome = () => {
       contentcontainerStyle={{columnGap:SIZES.small}}
       horizontal
       />
-      </view>
+      </View>
 
     </View>
     
