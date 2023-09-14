@@ -45,10 +45,10 @@ const Nearbyjobs = () => {
             <PopularJobCard item={item}/>
           )}
           keyExtractor={item=>item?.job_id}
-          contentCaontainerStyle={{
-            columnGap:SIZES.medium
+          contentContainerStyle={{
+            rowGap:SIZES.medium
           }}
-          horizontal
+          vertical
           />
         )
       }
