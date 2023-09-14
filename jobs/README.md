@@ -1,14 +1,8 @@
-# Expo Router Example
+# RanJobs
 
-Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
+# Mobile Application For Job Seeking
+-The application connects to APIS to render data to the user.
 
-## 🚀 How to use
+## Upcoming Upgrades Coming Soon
+- The data fetched from the API will be stored in the Application database for just in case.
 
-```sh
-npx create-expo-app -e with-router
-```
-
-## 📝 Notes
-
-- [Expo Router: Docs](https://expo.github.io/router)
-- [Expo Router: Repo](https://github.com/expo/router)

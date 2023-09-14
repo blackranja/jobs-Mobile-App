@@ -6,7 +6,7 @@ import {
   FlatList,
   ActivityIndicator
 } from 'react-native';
-
+import useFetch from '../../../hook/useFetch';
 import {useRouter} from 'expo-router';
 import styles from './popularjobs.style';
 import {
@@ -16,9 +16,9 @@ import {
 import PopularJobCard from '../../common/cards/popular/PopularJobCard';
 
 const Popularjobs = () => {
-  const [error,setError]=useState(false);
+  const {data,isLoading,error}=useFetch('search',{query:'React developer',num_pages:1});
   const router=useRouter();
-  const isLoading=false;
+  
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -40,7 +40,7 @@ const Popularjobs = () => {
          error?(
           <Text>Something Went Wrong</Text>
         ):(
-          <FlatList data={[1,2,3,4]}
+          <FlatList data={data}
           renderItem={({item})=>(
             <PopularJobCard item={item}/>
           )}
