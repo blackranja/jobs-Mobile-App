@@ -1,13 +1,16 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text,TouchableOpacity,FlatList } from 'react-native'
 
 import styles from './tabs.style'
+import {SIZES} from '../../../constants';
+const TabButton=()=>{
 
-const Tabs = () => {
+}
+const Tabs = ({tabs,activeTabs,setActiveTab}) => {
   return (
-    <View>
-      <Text>Tabs</Text>
-    </View>
+   <View style={styles.container}>
+    <FlatList 
+   </View>
   )
 }
 
