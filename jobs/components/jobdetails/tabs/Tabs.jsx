@@ -3,18 +3,26 @@ import { View, Text,TouchableOpacity,FlatList } from 'react-native'
 
 import styles from './tabs.style'
 import {SIZES} from '../../../constants';
-const TabButton=({name,activeTab,onHandleSearchType})=>{
+
+const TabButton=({
+  name,
+  activeTab,
+  onHandleSearchType
+})=>{
   <TouchableOpacity
   style={styles.btn(name,activeTab)}
   onPress={onHandleSearchType}
   >
-    <Text style={style.btnText(name,activeTab)}>
-      {name}s
+    <Text style={styles.btnText(name,activeTab)}>
+      {name}
     </Text>
   </TouchableOpacity>
 
 }
-const Tabs = ({tabs,activeTab,setActiveTab}) => {
+const Tabs = ({tabs,
+  activeTab,
+  setActiveTab
+}) => {
   return (
    <View style={styles.container}>
     <FlatList 
@@ -31,8 +39,11 @@ const Tabs = ({tabs,activeTab,setActiveTab}) => {
     horizontal
     showsHorizontalScrollIndicator={false}
     keyExtractor={item =>item}
-    constentContainerStyle={{columnGap:SIZES.small / 2 }}
+    constentContainerStyle={
+      {columnGap:SIZES.small / 2 }
+    }
     />
+    {displayTabContent()}
    </View>
   )
 }
